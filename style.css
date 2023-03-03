@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,600;1,700&family=Julee&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(45deg,#140133,#083086,#2f00ae,#4300fd,#2f00ae,#083086);
+    min-height: 100vh;
+    transition: all 1s ease-in-out;
+    scroll-behavior: smooth;
+}
+#header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+#header .logo{
+    font-weight: 700;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+}
+#header .logo::before{
+    content: attr(data-text);
+    position: absolute;
+    color: #fff;
+    white-space: nowrap;
+    text-transform: capitalize;
+    width: 100%;
+    overflow: hidden;
+    border-right: 4px solid #ff9d9d ;
+    animation: animateLogo 10s linear infinite;
+}
+@keyframes animateLogo {
+    0%,10%,100%{
+        width: 0;
+        border-radius: 5px;
+        border-right: 4px solid #ff9d9d ;
+    }
+    70%,90%{
+        width: 12%;
+        border-radius: 30px;
+        border-right: 4px solid #9dffff ;
+    }
+}
+#header .navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header .navigation li{
+    list-style: none;
+    margin-left: 10px;
+}
+#header .navigation li a{
+    text-decoration: none;
+    margin-left: 10px;
+    color: #fff;
+    padding: 5px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 1s;
+}
+#header .navigation li a:hover{
+    background: aliceblue;
+    color: black;
+}
+#header .navigation li a.active{
+    background: aliceblue;
+    color: black;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+section img#moon{
+    mix-blend-mode: screen;
+}
+section img#mountains_front{
+    z-index: 10;
+}
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#1c0522,transparent);
+}
+#text{
+    position: absolute;
+    color: aliceblue;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    text-align: center;
+    z-index: 9;
+    text-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+}
+
+.sec,.sec2,.sec3,.sec4,.sec5{
+    position: relative;
+    padding: 50px;
+    margin: 10px;
+    text-align: center;
+    color: aliceblue;
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 16.5px );
+    -webkit-backdrop-filter: blur( 16.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.sec h2,.sec2 h2,.sec3 h2,.sec4 h2,.sec5 h2{
+    font-size: 3em;
+    color: aliceblue;
+    margin-bottom: 10px;
+    text-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+}
+.sec p,.sec2 p,.sec3 p,.sec4 p,.sec5 p{
+    font-size: 1.2em;
+    color: aliceblue;
+    font-weight: 300;
+}
+.sec2 li{
+    list-style: lower-roman;
+}
+#btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: aliceblue;
+    color: #2b1055;
+    font-size: 1.5em;
+    font-family: 'Julee',cursive;
+    z-index: 9;
+    transform: translateY(100px);
+}
+.govCardContainer,.gameCardContainer,.fundCardContainer,.rwCardContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    padding: 40px;
+    max-width: 1200px;
+}
+.govCardContainer .govCard,.gameCardContainer .gameCard,.fundCardContainer .fundCard, .rwCardContainer .rwCard{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    padding:20px;
+    margin: 10px;
+    background: transparent;
+    color: white;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5),
+    inset -5px -5px 5px rgba(3, 27, 100, 0.5),
+    -5px -5px 5px rgba(3, 27, 100, 0.5),
+    -5px -5px 5px rgba(3, 27, 100, 0.5);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.govCardContainer .govCard a:hover, .gameCardContainer .gameCard a:hover, .fundCardContainer .fundCard a:hover, .rwCardContainer .rwCard a:hover{
+    background: #2b1055;
+    color: white;
+}
+.govCardContainer .govCard .votingBox, .gameCardContainer .gameCard .lotteryBox, .fundCardContainer .fundCard .fundBox, .rwCardContainer .rwCard .rwBox{
+    position: absolute;
+    top:20px;
+    left:20px;
+    right: 20px;
+    bottom: 20px;
+    background: transparent;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.govCardContainer .govCard:hover .votingBox, .gameCardContainer .gameCard:hover .lotteryBox, .fundCardContainer .fundCard:hover .fundBox, .rwCardContainer .rwCard:hover .rwBox{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+.govCardContainer .govCard .votingBox .content h2, .gameCardContainer .gameCard .lotteryBox .content h2, .fundCardContainer .fundCard .fundBox .content h2, .rwCardContainer .rwCard .rwBox .content h2{
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(0,0,0,0.5);
+    transition: 0.5;
+    pointer-events: none;
+}
+.govCardContainer .govCard:hover .votingBox .content h2, .gameCardContainer .gameCard:hover .lotteryBox .content h2, .fundCardContainer .fundCard:hover .fundBox .content h2, .rwCardContainer .rwCard:hover .rwBox .content h2{
+    color: rgba(0,0,0,0.05);
+}
+.govCardContainer .govCard:hover .votingBox .content h3, .gameCardContainer .gameCard:hover .lotteryBox .content h3, .fundCardContainer .fundCard:hover .fundBox .content h3, .rwCardContainer .rwCard:hover .rwBox .content h3{
+    font-size: 1.1em;
+    color: #777;
+    z-index: 1;
+    transition: 0.5s;
+}
+.govCardContainer .govCard .votingBox .content p, .gameCardContainer .gameCard .lotteryBox .content p, .fundCardContainer .fundCard .fundBox .content p, .rwCardContainer .rwCard .rwBox .content p{
+    font-size: 1em;
+    font-weight: 300;
+    color: #ffffff;
+    z-index: 1;
+    transition: 0.5s;
+}
+.govCardContainer .govCard .votingBox .content a, .gameCardContainer .gameCard .lotteryBox .content a, .fundCardContainer .fundCard .fundBox .content a, .rwCardContainer .rwCard .rwBox .content a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #03a9f4;
+    margin-top: 15px;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.govCardContainer .govCard:hover .votingBox .content a, .gameCardContainer .gameCard:hover .lotteryBox .content a, .fundCardContainer .fundCard:hover .fundBox .content a, .rwCardContainer .rwCard:hover .rwBox .content a{
+    background: #ff568f;
+}
+footer{
+    color: aliceblue;
+    font-weight: 900;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+footer a{
+    color: aliceblue;
+    text-decoration: none;
+    cursor: pointer;
+}
+.bmc{
+    padding: 5px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5),
+    inset -5px -5px 5px rgba(3, 27, 100, 0.5),
+    -5px -5px 5px rgba(3, 27, 100, 0.5),
+    -5px -5px 5px rgba(3, 27, 100, 0.5);
+    border-radius: 10px;
+    transition: all 1s;
+}
+.bmc:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+@media (max-width:992px){
+    #header{
+        padding: 20px;
+    }
+    #header .logo{
+        font-size: 1.5em;
+    }
+    #header .navigation{
+        display: none;
+    }
+    #header .navigation.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(45deg,#140133,#083086,#2f00ae,#4300fd);
+    }
+    #header .navigation li a{
+        font-size: 1.5em;
+        margin: 5px 0px;
+        display: inline-block;
+        border-radius: 30px;
+    }
+    .toggle{
+        position: relative;
+        width: 50px;
+        height: 100px;
+        cursor: pointer;
+        background: url(menu.png);
+        background-size: 70px;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1000000;
+    }
+    .toggle.active{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: url(close.png);
+        background-size: 70px;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1000000;
+    }
+    @keyframes animateLogo{
+        0%,10%,100%{
+            width: 0;
+            border-radius: 5px;
+            border-right: 4px solid #ff9d9d ;
+        }
+        70%,90%{
+            width: 50%;
+            border-radius: 30px;
+            border-right: 4px solid #9dffff ;
+        }
+    }
+    .sec, .sec2, .sec3, .sec4, .sec5{
+        padding: 20px;
+    }
+    .sec h2,.sec2 h2,.sec3 h2,.sec4 h2,.sec5 h2{
+        font-size: 1.5em;
+    }
+    section img#stars{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    section img#mountains_front,img#mountains_behind{
+        transform: translateY(-5px);
+    }
+    #text{
+        font-size: 15vw;
+    }
+    .govCardContainer, .gameCardContainer, .fundCardContainer,.rwCardContainer{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10%;
+        align-items: center;
+        flex-direction: column;
+    }
+    footer{
+        color: aliceblue;
+        font-weight: 900;
+        margin: 20px;
+    }
+}
+::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+border-radius: 100vh;
+background: #1f2937;
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+background: linear-gradient(rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
+}
